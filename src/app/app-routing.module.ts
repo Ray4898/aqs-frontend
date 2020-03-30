@@ -13,7 +13,7 @@ const routes: Routes = [{path: 'checkin', component: OwnerFormComponent},
   {path: 'start', component: KioskStartComponent},
   {path: 'IfPrequal', component: IfPrequalComponent},
   {path: 'NotPrequal', component: NotPrequalComponent},
-  {path : '', redirectTo: '/checkin', pathMatch: 'full' }
+  {path : '', redirectTo: '/start', pathMatch: 'full' }
 ];
 
 

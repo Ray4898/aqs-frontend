@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Owner } from '../owner';
 import { FormGroup, FormBuilder } from  '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-owner-form',
@@ -9,8 +10,11 @@ import { FormGroup, FormBuilder } from  '@angular/forms';
 })
 export class OwnerFormComponent {
   checkinForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
+              private router: Router,) {
     this.createContactForm();
+
   }
   createContactForm() {
     this.checkinForm = this.formBuilder.group({
@@ -36,6 +40,11 @@ export class OwnerFormComponent {
     console.log('phone : ', phone);
     console.log('email : ', email);
     console.log('Microchip Number : ', MicroID);
+    if(firstname!=="" && lastname!=="" && phone!=="")
+    {
+      
+      this.router.navigate(['/search']);
+    }
   }
 }
 
